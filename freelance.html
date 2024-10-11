@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelanco</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #99e1ff, #3ea0c5);
+            color: #000;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff; /* Latar belakang header */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #6c63ff;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .content-left {
+            max-width: 40%;
+        }
+
+        .content-left h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content-left h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .content-left p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-daftar,
+        .btn-login {
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-daftar {
+            background-color: #6c63ff;
+            color: #fff;
+        }
+
+        .btn-login {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        .btn-daftar:hover {
+            background-color: #5848c2;
+        }
+
+        .btn-login:hover {
+            background-color: #bbb;
+        }
+
+        .content-right {
+            position: relative;
+            max-width: 5000%;
+        }
+
+        .play-icon,
+        .code-icon,
+        .rocket-icon,
+        .flame-icon,
+        .cursor-icon {
+            position: absolute;
+        }
+
+        .play-icon {
+            top: -150px;
+            right: 250px;
+            width: 50px;
+        }
+
+        .code-icon {
+            top: -100px;
+            right: 100px;
+            width: 200px;
+        }
+
+        .rocket-icon {
+            bottom: 500px;
+            left: 150px;
+            width: 50px;
+        }
+
+        .flame-icon {
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+        }
+
+        .cursor-icon {
+            top: 80px;
+            right: 50px;
+            width: 60px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            background-color: #ffffff; /* Latar belakang footer */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">freelanco</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content-left">
+            <h2>Halo, Selamat Datang</h2>
+            <h1>Temukan Pekerjaan<br>freelance impianmu</h1>
+            <p>Bekerjalah di tempat yang membuatmu nyaman,<br>Daftar sekarang gratis.</p>
+            <div class="buttons">
+                <a href="#" class="btn-daftar">Daftar</a>
+                <a href="#" class="btn-login">Login</a>
+            </div>
+        </div>
+        <div class="content-right">
+            <img src="https://cdn.discordapp.com/attachments/1288895270980943904/1291382965691093012/pngegg.png?ex=66ffe59b&is=66fe941b&hm=85aa9145609d4a95ccbf2d23a60455d1463a0978a0128014a72b56f1fc38a2ae&" alt="Icon Code" class="code-icon">
+            <img src="https://cdn.discordapp.com/attachments/1288895270980943904/1291385067150512168/pngwing.com.png?ex=66ffe790&is=66fe9610&hm=122b515b48de3b39eabffd9377c0a0d5ce7e4ec953ca8a7071d58bf3e7030f40&" alt="Play Icon" class="play-icon">
+            <img src="https://cdn.discordapp.com/attachments/1288895270980943904/1291386311684526160/pngwing.com_1.png?ex=66ffe8b9&is=66fe9739&hm=79291ecd2ef272191ec38f96286077501eaf1b786c0b4d2fe1854fd7547b794c&" alt="Rocket Icon" class="rocket-icon">
+            <img src="https://cdn.discordapp.com/attachments/1288895270980943904/1291386311684526160/pngwing.com_1.png?ex=66ffe8b9&is=66fe9739&hm=79291ecd2ef272191ec38f96286077501eaf1b786c0b4d2fe1854fd7547b794c&" alt="Flame Icon" class="flame-icon">
+            <img src="https://cdn.discordapp.com/attachments/1288895270980943904/1291387537549688892/click.png?ex=66ffe9dd&is=66fe985d&hm=f246cf7eb4853d8b99c75c1a85f64d0ddc7012a0b20fb610026c2b091ed32537&" alt="Cursor Icon" class="cursor-icon">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>copyright freelanco | 2024</p>
+    </footer>
+</body>
+
+</html>
