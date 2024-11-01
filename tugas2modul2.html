@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .todo-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #6c63ff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #5848c2;
+        }
+
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .todo-item {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .todo-item span {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .edit-btn, .delete-btn {
+            background-color: #58c76b;
+            border: none;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .delete-btn {
+            background-color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+        <input type="text" id="todo-input" placeholder="Enter a new task...">
+        <button onclick="addTodo()">Add</button>
+        <ul class="todo-list" id="todo-list"></ul>
+    </div>
+
+    <script>
+        let todos = [];
+        let editIndex = -1;
+
+        function addTodo() {
+            const todoInput = document.getElementById('todo-input'); 
+            const todoText = todoInput.value.trim();
+
+            if (todoText === '') {
+                alert('Please enter a task!');
+                return;
+            }
+
+            if (editIndex >= 0) {
+                todos[editIndex] = todoText;
+                editIndex = -1;
+            } else {
+                todos.push(todoText);
+            }
+
+            todoInput.value = '';
+            renderTodos();
+        }
+
+        function renderTodos() {
+            const todoList = document.getElementById('todo-list');
+            todoList.innerHTML = '';
+
+            todos.forEach((todo, index) => {
+                const todoItem = document.createElement('li');
+                todoItem.className = 'todo-item';
+
+                const todoText = document.createElement('span');
+                todoText.innerText = todo;
+
+                const editButton = document.createElement('button');
+                editButton.innerText = 'Edit';
+                editButton.className = 'edit-btn';
+                editButton.onclick = () => editTodo(index);
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.className = 'delete-btn';
+                deleteButton.onclick = () => deleteTodo(index);
+
+                todoItem.appendChild(todoText);
+                todoItem.appendChild(editButton);
+                todoItem.appendChild(deleteButton);
+
+                todoList.appendChild(todoItem);
+            });
+        }
+
+        function editTodo(index) {
+            document.getElementById('todo-input').value = todos[index];
+            editIndex = index;
+        }
+
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            renderTodos();
+        }
+    </script>
+
+</body>
+</html>
